@@ -1,21 +1,7 @@
-let val='qqqqq'
-
-if (val==='a'){
-    console.log( 'a' );
-  }else{
-      if(val==='b') {}
-        else{
-          if(val==='c') {}
-            else{
-              if(val==='d') {}
-                else{
-                  if(val==='e') {
-                    console.log( 'others' );
-                  }
-                  else{
-                    console.log( 'unknown' );
-      }
-    }
-    }
-  }
-}
+let val='abc'
+    if((val=='a')||(val=='b')|| (val=='c') || (val=='d')|| (val=='e')){
+        if (val=='a'){
+            console.log('a')
+        } else console.log( 'others' );
+    } 
+    else console.log( 'unknown' );
