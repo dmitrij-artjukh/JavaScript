@@ -9,17 +9,13 @@ f([1, 2, 3]);
 //f([]) // Error: parameter can't be an empty
 
 function f(tmp) {
-    if (Array.isArray(tmp) == true) {
-
+    if (Array.isArray(tmp)) {
         if (i < 3) {
             if (tmp.length !== 0) {
-                rem = tmp.splice(0, 1)
-                console.log(rem)
+                console.log(tmp.splice(0, 1))
                 i++
                 f(tmp)
             } else throw new Error("parameter can't be an empty")
         }
-
     } else throw new Error("Error: parameter type should be an array")
-
 }
