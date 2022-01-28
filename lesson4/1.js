@@ -23,8 +23,6 @@ function foreach(arr, callback) {
         }else throw new Error ("not a function")
       };
 
-      foreach(arr, function(item, i, arr) {
-        
-        console.log( item , i ,  arr)
-      }
-      );
+foreach(arr, function(item, i, arr) {
+  console.log( item , i ,  arr)
+ });
