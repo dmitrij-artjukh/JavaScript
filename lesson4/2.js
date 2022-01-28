@@ -15,23 +15,25 @@
 
 
 const arr = [1,2,3];
-const arr1=[]
-let i,item=0;
+let results=[]
+let i;
 
 function filter(arr, callback) {
        if (typeof(callback)=='function'){
              if (Array.isArray(arr)){
-                for (i = 0; i < arr.length; i ++) {
-                     callback(arr[i], i, arr);
+                 for (i = 0; i < arr.length; i = i + 1) {
+                    if (callback( arr[i], i, arr)) {
+                      results.push(arr[i]);
+                    }
                   }
+                  return results;
+                 
             } else throw new Error("not a array")
         }else throw new Error ("not a function")
       };
 
-filter(arr, function(item, i, arr) {
-        if (item>1){
-          arr1.push(item)
-        return arr1}
-      }
-);
-console.log(arr1)
+
+      const data = filter(arr, function(item, i, arr) {
+        return item>1;
+      });
+console.log(data);
