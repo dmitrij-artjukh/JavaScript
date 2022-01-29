@@ -10,16 +10,21 @@
 
 // ```javascript
  const arr = [3,2,1];
+ //const arr=[]
  const arr1=[]
  reverse(arr); // [1,2,3]
 // ```
 function reverse(arr){
-l=arr.length
-for (i=0;i<arr.length;i++)
-{l--
-    for (n=0;n<arr.length;n++){
-       arr1[i]=arr[l]
-    }
-}
-return console.log (arr1)
+            if (Array.isArray(arr)){
+                if (arr.length !== 0) {
+                     l=arr.length
+                    for (i=0;i<arr.length;i++)
+                    {l--
+                        for (n=0;n<arr.length;n++){
+                         arr1[i]=arr[l]
+                        }
+                    }
+                } else throw new Error("parameter can't be an empty")         
+            return console.log (arr1)
+            } else throw new Error ('parameter type should be an array')
 }

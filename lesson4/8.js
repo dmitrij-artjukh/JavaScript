@@ -13,8 +13,8 @@
 let sum=0
 let tmp=[]
 // ```javascript
- //const arr = [[[1, 2], [1, 2]], [[2, 1], [1, 2]]];
-// f(arr); // 12
+ const arr = [[[1, 2], [1, 2]], [[2, 1], [1, 2]]];
+ f(arr); // 12
 //const arr2 = [[[[[1,2]]]]];
 // f(arr2); // 3
  //const arr3 = [[[[[1,2]]],2],1];
@@ -26,11 +26,16 @@ let tmp=[]
 // ```
 
 function f(arr){
+    if (Array.isArray(arr)){
      tmp = arr.flat(Infinity)
+    
      tmp.forEach(element => {
-         sum+=element
+          if (typeof(element)=='number'){
+              sum+=element
+          } else throw new Error ('parameter type is not a Number or Array')
      });
-    return sum
+     return sum
+    } 
 }
 
 console.log(sum)

@@ -20,15 +20,15 @@ function reduce(arr, callback) {
     
     if (typeof(callback)=='function'){
           if (Array.isArray(arr)){
-            arr1=arr.reverse ()
-            for (i = 0; i <arr1.length ; i++) {
-              
-                callback( arr1[i], i, arr1) 
+            if (typeof(acc)=='number'){
+              arr1=arr.reverse ()
+               for (i = 0; i <arr1.length ; i++) {
+                    callback( arr1[i], i, arr1) 
                }
-               return results;
-             
-         } else throw new Error("not a array")
-     }else throw new Error ("not a function")
+              return results;
+            }
+         } else throw new Error("parameter type should be an array")
+     }else throw new Error ("parameter type should be an function")
    };
 
    const data = reduce(arr, function(item, i, arr, acc) {

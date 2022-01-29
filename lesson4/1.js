@@ -19,8 +19,8 @@ function foreach(arr, callback) {
                 for (i = 0; i < arr.length; i ++) {
                      callback(arr[i], i, arr);
                   }
-            } else throw new Error("not a array")
-        }else throw new Error ("not a function")
+            } else throw new Error("parameter type should be an array")
+        }else throw new Error ("parameter type should be an function")
       };
 
 foreach(arr, function(item, i, arr) {

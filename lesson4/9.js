@@ -14,7 +14,11 @@ arr=[]
  arrayFill('x',5); // [x,x,x,x,x]
 // ```
 function arrayFill(a, b){
-arr=new Array(b)
-arr.fill('x')
-console.log(arr)
+    if (typeof a === 'number' || typeof a =="string" || typeof a == 'object') {
+        if (typeof b === 'number'){
+             arr=new Array(b)
+             arr.fill('x')
+             console.log(arr)
+        }
+    }
 }
